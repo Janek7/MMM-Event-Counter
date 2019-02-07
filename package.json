@@ -1,0 +1,25 @@
+{
+  "name": "Magic-Mirror-Module-Event-Counter",
+  "version": "1.0.0",
+  "description": "MagicMirror2 Module to display the remaining time to a number of events.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Janek7/MMM-Event-Counter.git"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "Event",
+    "Count Down",
+    "Count",
+    "Days Until"
+  ],
+  "author": "Janek Putz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yawnsde/MMM-RNV/issues"
+  },
+  "homepage": "https://github.com/Janek7/MMM-Event-Counter#readme",
+  "dependencies": {
+  }
+}
