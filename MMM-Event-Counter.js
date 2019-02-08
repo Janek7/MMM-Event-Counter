@@ -2,9 +2,9 @@
 
 Module.register("MMM-Event-Counter", {
 
-   defaults: {
-       text: "Hello world!"
-   } ,
+    defaults: {
+        displayIcons: true,
+    },
 
     // Override dom generator
     getDom: function () {
@@ -13,23 +13,35 @@ Module.register("MMM-Event-Counter", {
         var wrapper = document.createElement("div");
         var table = document.createElement("table");
 
-        for (var i = 0; i < config.events.length; i++) {
+        for (var e in config.events) {
 
-            var event = config.events[i];
+            var event = config.events[e];
+            var eventRow = document.createElement("tr");
 
-            // create fields
-            var eventTitle = document.createElement("td");
-            $(eventTitle).text(event.name);
+            // append icon
+            if (config.displayIcons) {
 
-            var eventTime = document.createElement("td");
+                var iconTd = document.createElement("td");
+                var icon = document.createElement("i");
+                $(icon).addClass(event.icon === undefined || event.icon === '' || event.icon === null ?
+                    "fas fa-calendar-alt" : "fas fa-" + event.icon);
+                $(iconTd).append(icon);
+                $(eventRow).append(iconTd);
+
+            }
+
+            // append name
+            var nameTd = document.createElement("td");
+            $(nameTd).text(event.name);
+            $(eventRow).append(nameTd);
+
+            //append time
+            var timeTd = document.createElement("td");
             var timeDiff = Math.abs(new Date(event.date).getTime() - new Date().getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            $(eventTime).text(diffDays + " Tage");
+            $(timeTd).text(diffDays + " Tage");
+            $(eventRow).append(timeTd);
 
-            // append as row
-            var eventRow = document.createElement("tr");
-            $(eventRow).append(eventTitle);
-            $(eventRow).append(eventTime);
             $(table).append(eventRow);
 
         }
@@ -39,9 +51,15 @@ Module.register("MMM-Event-Counter", {
 
     },
 
-    getScripts: function() {
+    getScripts: function () {
         return [
             'https://code.jquery.com/jquery-2.2.3.min.js',  // this file will be loaded from the jquery servers.
+        ]
+    },
+
+    getStyles: function () {
+        return [
+            'https://use.fontawesome.com/releases/v5.7.1/css/all.css',
         ]
     }
 

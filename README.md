@@ -20,12 +20,13 @@ Add the following JavaScript object to your modules array in ``config/config.js`
 {
     module: 'MMM-Event-Counter',
     position: 'top_left',
-    header: 'Events',
+    header: 'Time remaining until ...',
     config: {
         events: [
             {
                 name: 'Holidays',
-                date: '2019-06-08'
+                date: '2019-06-08',
+                icon: 'sun',
             },
             {
                 name: 'Exam Period',
@@ -33,19 +34,33 @@ Add the following JavaScript object to your modules array in ``config/config.js`
             },
             ...
         ],
+        displayIcons: false
     },
 }
 ````
 
 ## Configuration
+
+### Entire module
+
+The module can be configured through the following options
+
+| Option | Description | Required |
+|----------------- |----------- | ------- |
+| `displayIcons` | name of the upcoming event | ❌ (*default*: `true`)  |
+
+### Events
+
 Every event can be configured through the following options
 
 | Option | Description | Required |
 |----------------- |----------- | ------- |
 | `name` | name of the upcoming event | ✅  |
 | `date` | date of the upcoming event to count down in format `YYYY-MM-DD` | ✅  |
-| `icon` | displayed icon | ❌  |
+| `icon` | displayed icon (only free fa icons can be used) | ❌ (*default*: `calendar-alt`)  |
 
 
 ## Dependencies
-This module uses [jQuery](https://jquery.com/).
+This module uses
++ [jQuery](https://jquery.com/)
++ [Font Awesome](https://origin.fontawesome.com/) icons
