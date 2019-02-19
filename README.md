@@ -1,6 +1,8 @@
 # MMM-Event-Counter
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) project which can displays the remaining time to a number of events.
+This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) project which displays the remaining time to a number of events.
+
+![example](https://i.imgur.com/VoCGNtM.png)
 
 ## Installation
 

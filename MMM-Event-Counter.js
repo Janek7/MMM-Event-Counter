@@ -60,6 +60,7 @@ Module.register("MMM-Event-Counter", {
     getStyles: function () {
         return [
             'https://use.fontawesome.com/releases/v5.7.1/css/all.css',
+            'MMM-Event-Counter.css'
         ]
     },
 
