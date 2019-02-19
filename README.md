@@ -46,7 +46,7 @@ Add the following JavaScript object to your modules array in ``config/config.js`
 The module can be configured through the following options
 
 | Option | Description | Required |
-|----------------- |----------- | ------- |
+| :----: | :---- | :----: |
 | `displayIcons` | name of the upcoming event | ❌ (*default*: `true`)  |
 
 ### Events
@@ -54,11 +54,18 @@ The module can be configured through the following options
 Every event can be configured through the following options
 
 | Option | Description | Required |
-|----------------- |----------- | ------- |
+| :----: | :---- | :----: |
 | `name` | name of the upcoming event | ✅  |
 | `date` | date of the upcoming event to count down in format `YYYY-MM-DD` | ✅  |
 | `icon` | displayed icon (only free fa icons can be used) | ❌ (*default*: `calendar-alt`)  |
 
+### Supported languages
+In Magic Mirrors ``config.js`` the following languages can be specified.
+
+| Key | Name |
+| :----: | :---- | 
+| `en` | English |
+| `de` | German |
 
 ## Dependencies
 This module uses

@@ -39,7 +39,7 @@ Module.register("MMM-Event-Counter", {
             var timeTd = document.createElement("td");
             var timeDiff = Math.abs(new Date(event.date).getTime() - new Date().getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            $(timeTd).text(diffDays + " Tage");
+            $(timeTd).text(this.translate("TIME_DAYS", {"days" : diffDays}));
             $(eventRow).append(timeTd);
 
             $(table).append(eventRow);
@@ -61,6 +61,13 @@ Module.register("MMM-Event-Counter", {
         return [
             'https://use.fontawesome.com/releases/v5.7.1/css/all.css',
         ]
+    },
+
+    getTranslations: function() {
+        return {
+            en: "translations/en.json",
+            de: "translations/de.json"
+        }
     }
 
 });
